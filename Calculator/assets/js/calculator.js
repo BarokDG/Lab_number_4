@@ -1,5 +1,5 @@
 function add(array) {
-	var result = 0;
+	let result = 0;
 	for (i = 0; i < array.length; i++) {
 		result += Number(array[i]);
 	}
@@ -7,7 +7,7 @@ function add(array) {
 }
 
 function multiply(array) {
-	var result = 1;
+	let result = 1;
 	for (i = 0; i < array.length; i++) {
 		result *= Number(array[i]);
 	}
@@ -31,23 +31,60 @@ function square(num1) {
 	return Math.pow(num1, 2);
 }
 
+function average(array) {
+	let sum = 0;
+	for (i = 0; i < array.length; i++) {
+		sum += Number(array[i]);
+	}
+	return sum/array.length;
+}
+
 (function () {
+	// Takes User input
 	var operation = prompt(
 		`What operation do you want to run?
-			Enter the corresponding word in the brackets:
-			1. Addition (add)
-			2. Subtraction (subtract)
-			3. Multiplication (multiply)
-			4. Divison (divide)
-			5. Square (square)`
+			Enter the corresponding number in the brackets:
+			1. Addition
+			2. Subtraction
+			3. Multiplication
+			4. Divison
+			5. Square
+			6. Average`
 	);
-	var lowercaseOperation = operation.toLowerCase();
+
+	// Assigns input to an operation
+
+	var lowercaseOperation;
+	if (operation == '1'){
+		lowercaseOperation = "add";
+	}
+	else if (operation == '2'){
+		lowercaseOperation = "subtract";
+	}
+	else if (operation == '3'){
+		lowercaseOperation = "multiply";
+	}
+	else if (operation == '4'){
+		lowercaseOperation = "divide";
+	}
+	else if (operation == '5'){
+		lowercaseOperation = "square";
+	}
+	else if (operation == '6'){
+		lowercaseOperation = "average";
+	}
+	else{
+		lowercaseOperation = "invalid";
+	}
+
+	// Uses operation to run function 
+
 	if (lowercaseOperation == "square") {
 		let num1 = Number(prompt("Enter the number you want to square"));
 		console.log(square(num1));
 	} 
-	else if (lowercaseOperation == "add" || lowercaseOperation == "multiply" || lowercaseOperation == "divide" || lowercaseOperation == "subtract") {
-		if (lowercaseOperation == "add" || lowercaseOperation == "multiply") {
+	else if (lowercaseOperation == "add" || lowercaseOperation == "multiply" || lowercaseOperation == "divide" || lowercaseOperation == "subtract" || lowercaseOperation == "average") {
+		if (lowercaseOperation == "add" || lowercaseOperation == "multiply" || lowercaseOperation == "average") {
 			let addStack = [];
 			var i = 1;
 			do {

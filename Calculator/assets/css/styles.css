@@ -1,3 +1,26 @@
 body{
-    background-color: green;
+    text-align: center;
 }
+
+div{
+    padding: 20% 0;
+}
+
+h1{
+    /* animation-name: h1;
+    animation-duration: 1s; */
+    animation-play-state: paused;
+    border: 10px solid #ff2eb6;
+    box-shadow: -10px 10px #0fe;
+    display: inline;
+    padding: 20px;
+}
+
+/* h1:hover{
+    animation-play-state: running;
+}
+
+@keyframes h1{
+    from {box-shadow: -10px 10px #0fe;}
+    to {box-shadow: -20px 20px black;}
+} */
